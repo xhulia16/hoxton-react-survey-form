@@ -1,8 +1,33 @@
 import { useState } from "react";
 
+type Survey = {
+  review: "";
+  email: "";
+  username: "";
+  consistency: number;
+  colour: number;
+  logo: number;
+  bestFeatures: [];
+  worstFeatures: [];
+  timeSpent: [];
+};
+
 function Main() {
   // State for the challenge #3
   const [open, setOpen] = useState(false);
+  const [survey, setSurvey] = useState<Survey[]>([]);
+
+  const initialForm = {
+    review: "",
+    email: "",
+    username: "",
+    consistency: 0,
+    colour: 0,
+    logo: 0,
+    bestFeatures: [],
+    worstFeatures: [],
+    timeSpent: [],
+  };
 
   return (
     <main className="main">
@@ -11,7 +36,26 @@ function Main() {
         {/* answers should go here */}
       </section>
       <section className="main__form">
-        <form className="form">
+        <form
+          className="form"
+          onSubmit={(event) => {
+            event.preventDefault();
+
+            let answers = {
+              review: event.target.review.value,
+              email: event.target.email.value,
+              username: event.target.username.value,
+              consistency: event.target.consistency.value,
+              colour: event.target.colour.value,
+              logo: event.target.logo.value,
+              bestFeatures: [...document.querySelectorAll('input[name="bestFeatures"]:checked')].map(input => input.value),
+              worstFeatures: [...document.querySelectorAll('input[name="worstFeatures"]:checked')].map(input => input.value),
+              timeSpent: [...document.querySelectorAll('input[name="time"]:checked')].map(input => input.value)
+            };
+          console.log(answers)
+          setSurvey([...survey, answers])
+          }}
+        >
           <h2>Tell us what you think about your rubber duck!</h2>
 
           <h3>
@@ -20,25 +64,25 @@ function Main() {
           <ul className="checkboxes-list">
             <li>
               <label>
-                <input type="checkbox" name="features" value="color"></input>
+                <input type="checkbox" name="bestFeatures" value="color"></input>
                 It's yellow!
               </label>
             </li>
             <li>
               <label>
-                <input type="checkbox" name="features" value="sounds"></input>
+                <input type="checkbox" name="bestFeatures" value="sounds"></input>
                 It squeaks!
               </label>
             </li>
             <li>
               <label>
-                <input type="checkbox" name="features" value="logo"></input>
+                <input type="checkbox" name="bestFeatures" value="logo"></input>
                 It has a logo!
               </label>
             </li>
             <li>
               <label>
-                <input type="checkbox" name="features" value="size"></input>
+                <input type="checkbox" name="bestFeatures" value="size"></input>
                 It's big!
               </label>
             </li>
@@ -50,25 +94,25 @@ function Main() {
           <ul className="checkboxes-list">
             <li>
               <label>
-                <input type="checkbox" name="features" value="color"></input>
+                <input type="checkbox" name="worstFeatures" value="color"></input>
                 It's yellow!
               </label>
             </li>
             <li>
               <label>
-                <input type="checkbox" name="features" value="sounds"></input>
+                <input type="checkbox" name="worstFeatures" value="sounds"></input>
                 It squeaks!
               </label>
             </li>
             <li>
               <label>
-                <input type="checkbox" name="features" value="logo"></input>
+                <input type="checkbox" name="worstFeatures" value="logo"></input>
                 It has a logo!
               </label>
             </li>
             <li>
               <label>
-                <input type="checkbox" name="features" value="size"></input>
+                <input type="checkbox" name="worstFeatures" value="size"></input>
                 It's big!
               </label>
             </li>
@@ -156,25 +200,25 @@ function Main() {
             </li>
             <li>
               <label>
-                <input type="checkbox" name="time" value="none"></input>
-                I don't like to spend time with it
+                <input type="checkbox" name="time" value="none"></input>I don't
+                like to spend time with it
               </label>
             </li>
           </ul>
 
           <h4>What else have you got to say about your rubber duck?</h4>
           <label>
-            <textarea/>  
+            <textarea name='review'/>
           </label>
           <h4>Put your name here (if you feel like it):</h4>
           <label>
-            <input className='input'></input>
+            <input className="input" name='username'></input>
           </label>
           <h4>Leave us your email pretty please??</h4>
           <label>
-            <input className='input'></input>
+            <input className="input" name='email'></input>
           </label>
-          <button className='form__submit'>Submit Survey!</button>
+          <button className="form__submit">Submit Survey!</button>
         </form>
       </section>
     </main>
