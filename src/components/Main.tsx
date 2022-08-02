@@ -162,19 +162,19 @@ function Main() {
           <h3>How do you rate your rubber duck consistency?</h3>
           <ul className="form__group radio">
             <li>
-              <input id="consistency-1" type="radio" name="consistency"></input>
+              <input id="consistency-1" type="radio" name="consistency" value='1'></input>
               <label htmlFor="consistency-1">1</label>
             </li>
             <li>
-              <input id="consistency-2" type="radio" name="consistency"></input>
+              <input id="consistency-2" type="radio" name="consistency" value='2'></input>
               <label htmlFor="consistency-2">2</label>
             </li>
             <li>
-              <input id="consistency-3" type="radio" name="consistency"></input>
+              <input id="consistency-3" type="radio" name="consistency" value='3'></input>
               <label htmlFor="consistency-3">3</label>
             </li>
             <li>
-              <input id="consistency-4" type="radio" name="consistency"></input>
+              <input id="consistency-4" type="radio" name="consistency" value='4'></input>
               <label htmlFor="consistency-4">4</label>
             </li>
           </ul>
@@ -182,19 +182,19 @@ function Main() {
           <h3>How do you rate your rubber duck colour?</h3>
           <ul className="form__group radio">
             <li>
-              <input id="colour-1" type="radio" name="colour"></input>
+              <input id="colour-1" type="radio" name="colour" value='1'></input>
               <label htmlFor="colour-1">1</label>
             </li>
             <li>
-              <input id="colour-2" type="radio" name="colour"></input>
+              <input id="colour-2" type="radio" name="colour" value='2'></input>
               <label htmlFor="colour-2">2</label>
             </li>
             <li>
-              <input id="colour-3" type="radio" name="colour"></input>
+              <input id="colour-3" type="radio" name="colour" value='3'></input>
               <label htmlFor="colour-3">3</label>
             </li>
             <li>
-              <input id="colour-4" type="radio" name="colour"></input>
+              <input id="colour-4" type="radio" name="colour" value='4'></input>
               <label htmlFor="colour-4">4</label>
             </li>
           </ul>
@@ -202,19 +202,19 @@ function Main() {
           <h3>How do you rate your rubber duck logo?</h3>
           <ul className="form__group radio">
             <li>
-              <input id="logo-1" type="radio" name="logo"></input>
+              <input id="logo-1" type="radio" name="logo" value='1'></input>
               <label htmlFor="logo-1">1</label>
             </li>
             <li>
-              <input id="logo-2" type="radio" name="logo"></input>
+              <input id="logo-2" type="radio" name="logo" value='2'></input>
               <label htmlFor="logo-2">2</label>
             </li>
             <li>
-              <input id="logo-3" type="radio" name="logo"></input>
+              <input id="logo-3" type="radio" name="logo" value='3'></input>
               <label htmlFor="logo-3">3</label>
             </li>
             <li>
-              <input id="logo-4" type="radio" name="logo"></input>
+              <input id="logo-4" type="radio" name="logo" value='4'></input>
               <label htmlFor="logo-4">4</label>
             </li>
           </ul>
