@@ -313,15 +313,15 @@ function Main() {
 
           <h4>What else have you got to say about your rubber duck?</h4>
           <label>
-            <textarea name="review" />
+            <textarea name="review" required/>
           </label>
           <h4>Put your name here (if you feel like it):</h4>
           <label>
-            <input className="input" name="username"></input>
+            <input className="input" name="username" required></input>
           </label>
           <h4>Leave us your email pretty please??</h4>
           <label>
-            <input className="input" name="email"></input>
+            <input className="input" name="email" required></input>
           </label>
           <button className="form__submit">Submit Survey!</button>
         </form>
