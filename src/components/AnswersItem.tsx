@@ -1,8 +1,16 @@
 import ItemsList from "./ItemsList";
 
 export type AnswerItemType = {
-  // fix me
-};
+  review: "";
+  email: "";
+  username: "";
+  consistency: number;
+  colour: number;
+  logo: number;
+  bestFeatures: [];
+  worstFeatures: [];
+  timeSpent: [];
+}
 
 type Props = {
   answerItem: AnswerItemType;

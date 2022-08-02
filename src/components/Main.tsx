@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AnswersList from "./AnswersList";
 
 type Survey = {
   review: "";
@@ -17,6 +18,8 @@ function Main() {
   const [open, setOpen] = useState(false);
   const [survey, setSurvey] = useState<Survey[]>([]);
 
+  window.survey=survey
+
   const initialForm = {
     review: "",
     email: "",
@@ -33,7 +36,45 @@ function Main() {
     <main className="main">
       <section className={`main__list ${open ? "open" : ""}`}>
         <h2>Answers list</h2>
-        {/* answers should go here */}
+        <div>
+          {survey.map(item =>(
+            <article className="answer">
+            <h3>{item.username || "Anon"} said:</h3>
+            <p>
+              <em>
+                What would you say that are the best features of your rubber duck?
+              </em>
+              
+            </p>
+            <p>
+              <em>
+                What would you say that are the worst nags of your rubber duck?
+              </em>
+              
+            </p>
+            <p>
+              <em>How do you rate your rubber duck consistency?</em>
+              <span className="answer__line">{item.consistency}</span>
+            </p>
+            <p>
+              <em>How do you rate your rubber duck colour?</em>
+              <span className="answer__line">{item.colour}</span>
+            </p>
+            <p>
+              <em>How do you rate your rubber duck logo?</em>
+              <span className="answer__line">{item.logo}</span>
+            </p>
+            <p>
+              <em>How do you like to spend time with your rubber duck?</em>
+              
+            </p>
+            <p>
+              <em>What else have you got to say about your rubber duck?</em>
+              <span className="answer__line">{item.review}</span>
+            </p>
+          </article>
+          ))}
+        </div>
       </section>
       <section className="main__form">
         <form
@@ -45,9 +86,9 @@ function Main() {
               review: event.target.review.value,
               email: event.target.email.value,
               username: event.target.username.value,
-              consistency: event.target.consistency.value,
-              colour: event.target.colour.value,
-              logo: event.target.logo.value,
+              consistency: Number(event.target.consistency.value),
+              colour: Number(event.target.colour.value),
+              logo: Number(event.target.logo.value),
               bestFeatures: [...document.querySelectorAll('input[name="bestFeatures"]:checked')].map(input => input.value),
               worstFeatures: [...document.querySelectorAll('input[name="worstFeatures"]:checked')].map(input => input.value),
               timeSpent: [...document.querySelectorAll('input[name="time"]:checked')].map(input => input.value)
