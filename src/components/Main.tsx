@@ -20,18 +20,6 @@ function Main() {
 
   window.survey = survey;
 
-  const initialForm = {
-    review: "",
-    email: "",
-    username: "",
-    consistency: 0,
-    colour: 0,
-    logo: 0,
-    bestFeatures: [],
-    worstFeatures: [],
-    timeSpent: [],
-  };
-
   return (
     <main className="main">
       <section className={`main__list ${open ? "open" : ""}`}>
