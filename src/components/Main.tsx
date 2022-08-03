@@ -102,6 +102,9 @@ function Main() {
             };
             console.log(answers);
             setSurvey([...survey, answers]);
+
+            event.target.reset()
+
           }}
         >
           <h2>Tell us what you think about your rubber duck!</h2>
